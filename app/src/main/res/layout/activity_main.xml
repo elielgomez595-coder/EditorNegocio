@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Editor de videos del negocio"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivPreview"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_marginTop="12dp"
+            android:background="#000000"
+            android:contentDescription="Vista previa"
+            android:scaleType="fitCenter" />
+
+        <TextView style="@style/SectionTitle" android:text="1. Videos (corta cada uno con la barra)" />
+
+        <LinearLayout
+            android:id="@+id/clipsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddClips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+ Agregar videos" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Duración total: 0:00" />
+
+        <TextView style="@style/SectionTitle" android:text="2. Formato" />
+
+        <RadioGroup
+            android:id="@+id/rgFormat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rbVertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Vertical 9:16 (Estados, Reels, TikTok)" />
+
+            <RadioButton
+                android:id="@+id/rbSquare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cuadrado 1:1 (publicación Instagram/Facebook)" />
+
+            <RadioButton
+                android:id="@+id/rbHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horizontal 16:9 (YouTube)" />
+        </RadioGroup>
+
+        <TextView style="@style/SectionTitle" android:text="3. Texto en pantalla" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ej: Promoción 2x1 · Llama al 300 000 0000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLines="4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Posición del texto" />
+
+        <Spinner
+            android:id="@+id/spTextPos"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <TextView style="@style/SectionTitle" android:text="4. Logo (se guarda para la próxima vez)" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="12dp"
+                android:background="#22888888"
+                android:contentDescription="Logo"
+                android:scaleType="fitCenter" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogo"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Elegir logo" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRemoveLogo"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quitar" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Esquina del logo" />
+
+        <Spinner
+            android:id="@+id/spCorner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <TextView style="@style/SectionTitle" android:text="5. Música de fondo" />
+
+        <TextView
+            android:id="@+id/tvMusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sin música" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMusic"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Elegir canción" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRemoveMusic"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quitar" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Volumen de la música (%)" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slMusicVol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:value="40"
+            android:valueFrom="0"
+            android:valueTo="100" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volumen del sonido original de los videos (%)" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slOrigVol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:value="100"
+            android:valueFrom="0"
+            android:valueTo="100" />
+
+        <TextView style="@style/SectionTitle" android:text="6. Crear video" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnExport"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="Crear video"
+            android:textSize="18sp" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:max="100"
+            android:visibility="gone"
+            app:trackCornerRadius="4dp" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+        <LinearLayout
+            android:id="@+id/resultRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPlay"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Ver" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShare"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Compartir" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+    </LinearLayout>
+</ScrollView>

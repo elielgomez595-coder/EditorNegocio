@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Claqueta con botón de reproducir -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- cuerpo -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,46 L76,46 L76,76 Q76,80 72,80 L36,80 Q32,80 32,76 Z" />
+    <!-- tapa de la claqueta -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M31,36 L73,28 L75,37 L33,45 Z" />
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M40,34.3 L46,33.2 L44,42.6 L38,43.7 Z M52,32 L58,30.9 L56,40.3 L50,41.4 Z M64,29.8 L70,28.7 L68,38.1 L62,39.2 Z" />
+    <!-- triángulo de play -->
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M48,53 L48,73 L64,63 Z" />
+</vector>

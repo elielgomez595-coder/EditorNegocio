@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- Media3 marca varias funciones como "inestables"; las usamos a propósito -->
+    <issue id="UnsafeOptInUsageError" severity="ignore" />
+</lint>
